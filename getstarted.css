@@ -1,0 +1,237 @@
+/* === Reset and Global Styling === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    /* Variables for Colors */
+    --primary-clr: #E5243B; /* SDG 4 Red (Main Color) */
+    --primary-medium-clr: #0A1036; /* Dark Blue */
+    --primary-light-clr: #D8E9DF; /* Soft Green */
+    --bg-clr-1: #F5F5F5; /* Light Gray */
+    --dark-heading-clr: #1F2933; /* Charcoal */
+    --dark-text-clr: #4A5568; /* Neutral Gray */
+    --light-heading-clr: #EAF7EF; /* Muted Green */
+    --light-text-clr: #BCCCDC; /* Soft Gray-Blue */
+}
+
+/* === Styling for Header === */
+header {
+    background-color: var(--dark-text-clr);
+    color: var(--light-heading-clr);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header .header-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header .header-container p {
+    font-size: 18px;
+}
+
+/* === Section Styling === */
+.get-involved,
+.other-sdgs {
+    padding: 40px 20px;
+    background-color: var(--bg-clr-1);
+    text-align: center;
+}
+
+.get-involved h2,
+.other-sdgs h2 {
+    color: var(--primary-clr); /* Using red for section headings */
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.get-involved p,
+.other-sdgs p {
+    color: var(--dark-text-clr);
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* === Form Styling === */
+form#sdg4-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid var(--dark-text-clr);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--dark-heading-clr);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--dark-text-clr);
+    border: 1px solid var(--dark-text-clr);
+    border-radius: 8px;
+    background-color: var(--bg-clr-1);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-clr); /* Red border on focus */
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-clr);
+}
+
+textarea {
+    resize: none;
+}
+
+button.btn {
+    padding: 10px 18px;
+    background-color: var(--primary-clr); /* Red button background */
+    color: var(--light-heading-clr);
+    font-size: 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button.btn:hover {
+    background-color: var(--light-heading-clr);
+    color: var(--primary-clr); /* Red text on hover */
+    border: 1px solid var(--primary-clr); /* Red border on hover */
+}
+
+/* === Footer Styling === */
+footer {
+    background-color: var(--primary-medium-clr);
+    color: var(--light-heading-clr);
+    padding: 20px 10px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer nav a {
+    color: var(--light-text-clr);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer nav a:hover {
+    color: var(--light-heading-clr);
+    text-decoration: underline;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    header .header-container h1 {
+        font-size: 28px;
+    }
+
+    form#sdg4-form {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+    }
+
+    button.btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* === Navbar Styling === */
+nav.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%; /* Corrected the width to 100% */
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+nav.main-navbar .logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* === Navigation List Styling === */
+nav.main-navbar .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav.main-navbar .nav-list li {
+    font-size: 16px;
+}
+
+/* === Styling "Home" Link as a Button === */
+nav.main-navbar .nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: var(--primary-clr); /* Red background */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Ensure it behaves like a button */
+}
+
+nav.main-navbar .nav-list a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #ffffff; /* Maintain white text on hover */
+}
+
+/* === Responsive Design for Smaller Screens === */
+@media (max-width: 768px) {
+    nav.main-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    nav.main-navbar .nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav.main-navbar .nav-list a {
+        padding: 8px 12px;
+    }
+}

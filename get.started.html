@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Education Initiative</title>
+    <link rel="stylesheet" href="getstarted.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="main-navbar">
+        <a href="index.html" class="logo">
+            <img src="images/home/SDG LOGO.png" alt="SDG Logo">
+        </a>
+        
+    </nav>
+    <header>
+        <div class="header-container">
+            <h1>Quality Education Initiative</h1>
+            <p>Join us in building a brighter future through education.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="get-involved">
+            <h2>Get Involved</h2>
+            <p>Interested in contributing to or benefiting from quality education initiatives? Please fill out the form
+                below. We'll use this information to connect you with relevant opportunities and resources.</p>
+            <form id="sdg4-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Highest Level of Education:</label>
+                    <select id="education" name="education">
+                        <option value="">Select an option</option>
+                        <option value="primary">Primary School</option>
+                        <option value="secondary">Secondary School</option>
+                        <option value="tertiary">Tertiary/Higher Education</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Areas of Interest (e.g., teaching, mentorship, curriculum development):</label>
+                    <textarea id="interests" name="interests" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="contribution">How would you like to contribute? (Optional)</label>
+                    <textarea id="contribution" name="contribution" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Information</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+
+        <section class="other-sdgs">
+            <h2>Explore Other SDGs</h2>
+            <p>Learn more about the other Sustainable Development Goals and how they interrelate with Quality Education:
+            </p>
+            <div class="sdg-links">
+                <a href="https://sdgs.un.org/goals" target="_blank" class="btn">View all SDGs</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Quality Education Initiative. All rights reserved.</p>
+            <nav>
+                <a href="index.html">Home</a> |
+   
+            </nav>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+
+        const form = document.getElementById('sdg4-form');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !email) {
+                displayMessage("Please fill in all required fields.", "red");
+                return;
+            }
+
+            // Simulate form submission (replace with actual AJAX/fetch)
+            displayMessage("Thank you for your interest! We will contact you soon.", "green");
+            form.reset();
+        });
+
+        function displayMessage(message, color) {
+            formMessage.textContent = message;
+            formMessage.style.color = color;
+            formMessage.style.opacity = 1;
+            formMessage.style.transition = "opacity 0.5s ease-in-out";
+            setTimeout(() => {
+                formMessage.style.opacity = 0;
+            }, 3000); // Message fades out after 3 seconds
+        }
+
+        // Add smooth scrolling to anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
